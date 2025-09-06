@@ -2,6 +2,35 @@
 2. Create a python file and add code to it. (It will save a csv file to a new "data" folder)
 3. Do a git commit and push  before initializing DVC
 
+4. Now do pip install dvc
+5. Do dvc init(It will create .dvcignore, .dvc)
+6. Now do "mkdir s3"(Create a new s3 directory) -It is kind of location, from where data will be ingested(AWS S3, GCP Bucket etc)
+7. Now we do "dvc remote add -d myremote S3" -> (-d means default remote else we need to mention every time when 
+we perform "dvc pull -r myremote", -r -> remote)We need to tell dvc , where is our remote location like a git origin
+8. dvc remote list - Like we see remote origin in git as git remote -v
+9. Now we have to do "dvc add data/" -> It means we are saying dvc to manage the version if you see anything
+   changes in the data/ folder. Now dvc will take care of this directory.
+10. It will give an error saying that data folder is already being tracket by git.
+    So to untrack it by git we use - "git rm -r --cached 'data'" - > It means remove the file from staging area 
+    and -r means  recursively means all it subfolder and files. --cached means keep the data folder in the 
+    working directory.
+11. Now after running above command we will be able to run "dvc add data/" command and it will create a 
+    data.dvc file(data means name of the folder that we want to track, if file name is diffrent ex - mydata
+    then dvc will create mydata.dvc)
+12. Run git add data.dvc .gitignore ->To track the changes with git.     
+
+Commands in DVC
+---------------
+dvc init
+dvc remote add -d <name> location(s3)
+dvc remote list
+dvc pull
+dvc push
+dvc commit 
+dvc status
+
+
+
 
 
 
