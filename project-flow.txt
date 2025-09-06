@@ -17,7 +17,11 @@ we perform "dvc pull -r myremote", -r -> remote)We need to tell dvc , where is o
 11. Now after running above command we will be able to run "dvc add data/" command and it will create a 
     data.dvc file(data means name of the folder that we want to track, if file name is diffrent ex - mydata
     then dvc will create mydata.dvc)
-12. Run git add data.dvc .gitignore ->To track the changes with git.     
+12. Run git add data.dvc .gitignore ->To track the changes with git.
+13. Run dvc commit and dvc push to push in dvc remote location. 
+14. Do git add commit and push to mark this stage as a first version of data.
+
+
 
 Commands in DVC
 ---------------
