@@ -1,0 +1,35 @@
+1. Create git repo and clone it in local
+2. Create a python file and add code to it. (It will save a csv file to a new "data" folder)
+3. Do a git commit and push  before initializing DVC
+
+
+
+
+# Project Flow for DVC (Data Version Control)
+
+1. Initialize DVC in your project
+    - Run: `dvc init`
+
+2. Add data files or directories to DVC
+    - Run: `dvc add <data-file-or-directory>`
+
+3. Create a DVC pipeline
+    - Define stages in a `dvc.yaml` file
+    - Run: `dvc run -n <stage-name> -d <dependency> -o <output> <command>`
+
+4. Track changes in data and models
+    - Use `git` to commit changes
+    - Run: `git add .` and `git commit -m "Your message"`
+
+5. Push data and model versions to remote storage
+    - Run: `dvc push`
+
+6. Pull data and model versions from remote storage
+    - Run: `dvc pull`
+
+7. Visualize the DVC pipeline
+    - Run: `dvc dag`
+
+8. Share your project with collaborators
+    - Ensure they have access to the remote storage
+    - Provide instructions to clone the repository and run `dvc pull`
