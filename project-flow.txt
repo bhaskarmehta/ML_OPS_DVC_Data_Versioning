@@ -24,7 +24,14 @@ we perform "dvc pull -r myremote", -r -> remote)We need to tell dvc , where is o
 15.Now we will do changes in mycode.py by adding a new row in the data, And check chnages via dvc status
 16. Again do the dvc commit and dvc push
 17. Now check git/dvc status, everything should be fine
-17. Now again repeat steps 15 and 16
+18. Now again repeat steps 15 and 16
+
+Now we can do a roll back to previos version of Data or code
+---------------------------------------------------------------
+git log --oneline
+git checkout <sha-id> on which version we want to move
+dvc pull
+
 
 
 
